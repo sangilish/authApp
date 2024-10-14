@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -12,23 +15,23 @@
         <div class="field">
             <label>Username:</label>
             <input type="text" name="username" />
-            <br/>
+            <br />
         </div>
         <div class="field">
-            <label>Password:</label>
+            <label>Password</label>
             <input type="password" name="password" required />
         </div>
         <div class="field">
-            <input class="submit-btn" type="submit" value="Submit" required />
+            <input class="submit-btn" type="submit" value="submit" required />
         </div>
-        <label id="error-message"></label>
+        <label id="error message"></label>
     </form>
 
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const info = urlParams.get('info');
 
-        if (info) {
+        if(info) {
             const errorMessage = document.getElementById("error-message");
             errorMessage.innerText = info;
             errorMessage.style.display = "block";

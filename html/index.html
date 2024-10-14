@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>Home</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Home </title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <div class="message-box">
         <h1 id="welcome-message"></h1>
-        <div><a href="HTML/private.html">Proceed to Admin</a></div>
-        <div><a href="HTML/logout.html">Log Out</a></div>
+        <div><a href="html/private.html"> Proceed to Admin </a></div>
+        <div><a href="html/logout.html"> Log Out </a></div>
     </div>
 
     <script>
         const req = new XMLHttpRequest();
-        req.onreadystatechange = function() {
+        req.onreadystatechange = function () {
             if (req.readyState == 4 && req.status == 200) {
                 const user = JSON.parse(req.response).user;
                 document.getElementById("welcome-message").innerText = `Welcome ${user.username}!`;
